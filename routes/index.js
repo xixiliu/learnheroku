@@ -11,23 +11,23 @@ var Eventlist = require("../models/event.js");
  * @param  {Object} req
  * @return {Object} json
  */
-router.get('/', function(req, res) {
+// router.get('/', function(req, res) {
   
-  var jsonData = {
-  	'name': 'xixi begin to learn mongoandheroku',
-  	'api-status':'OK'
-  }
+//   var jsonData = {
+//   	'name': 'xixi begin to learn mongoandheroku',
+//   	'api-status':'OK'
+//   }
 
-  // respond with json data
-  res.json(jsonData)
-});
+//   // respond with json data
+//   res.json(jsonData)
+// });
 
 
 
 /////////xixixi////////////////////
 
 
-router.get('/add-event', function(req,res){
+router.get('/', function(req,res){
 
   res.render('add.html')
 
