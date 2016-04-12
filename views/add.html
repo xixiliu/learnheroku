@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>add something</title>
+
+  <!-- Custom Font - Change 'Muli' to the font you want -->
+  <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Custom CSS inside CSS folder -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+  body{
+    color:white;
+  }
+  #chatbg{
+    position: fixed;
+    width: 375px;
+  }
+  #thepet{
+    width: 198px;
+    z-index: 10;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    top: 50px;
+    /*margin-bottom: 100px;*/
+  }
+  .popover{
+    max-width: 280px;
+  }
+  .popover-example .popover {
+    position: relative;
+    display: block;
+    margin: 20px;
+    position: relative;
+    display: block;
+    margin: 80px 50px 0px 50px;
+  }
+
+  .popover-content p{
+    text-align: center;
+    color:black;
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
+
+  #btnarea{
+    width: 375px;
+    height: 64px;
+    background-color: #F00;
+    position: relative;
+    margin-top: 244px;
+    margin-bottom: 5px;
+  }
+  #btnno{
+    width:50%;
+    float:left;
+    height: 64px;
+    background-color: #FFFFFF;
+    color:black;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 18px;
+  }
+  #btnyes{
+    width: 50%;
+    float: right;
+    height: 64px;
+    background-color: #FF7783;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 18px;
+  }
+  #btnarea a{
+    color: #FFFFFF;
+  }
+  </style>
+</head>
+<body>
+  <img src="img/main.png" id="chatbg"> <section>
+
+  <div class="container">
+
+   <div class="popover-example"> <!-- NEW -->
+    <div class="popover top">
+      <div class="arrow"></div>
+
+      <div class="popover-content">
+        <p>Hi Lily, today at 11:00 am, your heart rate is 158bpm. Anything interesting?</p>
+      </div>
+    </div>
+  </div>
+
+  <img id="thepet" src="img/chatpet.png" style="width:198px;">
+
+  <div class="row" id="btnarea">
+    <div id="btnno">Nothing special</div>
+    <a href="#detail-info"><div id="btnyes">Yes!</div></a>
+  </div>
+
+  <div class="row" id="detail-info">
+    <div class="col-sm-8" style="margin-bottom:245px;">
+      <h1>Let's add a diary</h1>
+      <form method="post" action="/api/create" id="myForm">
+        <div class="form-group">
+          <label for="what">what happen</label>
+          <input type="text" class="form-control" id="name" placeholder="what" name="what" required>
+        </div>
+        <div class="form-group">
+          <label for="mood">mood</label>
+          <input type="text" class="form-control" id="itpYear" placeholder="mood" name="mood" required>
+        </div>
+        <div class="form-group">
+          <label for="who">who</label>
+          <input type="text" class="form-control" id="who" name="who" required>
+          <p class="help-block">who's with you</p>
+        </div>
+          <!-- <div class="form-group">
+            <label for="location">location</label>
+            <input type="text" class="form-control" id="link" placeholder="Link" name="link" required>
+          </div>   -->
+          <div class="form-group">
+            <label for="imageUrl">ImageURL</label>
+            <input type="text" class="form-control" id="imageUrl" placeholder="imageUrl" name="imageUrl" required>
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<!-- JQuery script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+
+<!-- JQuery validate -->
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+$("#myForm").validate({
+  rules: {
+            // compound rule
+            // what: {
+            //   required: true,
+            //   number: true
+            // },
+            // mood: {
+            //   required: true,
+            //   url: true
+            // }            
+          }
+
+        });
+</script>
+
+</html>
