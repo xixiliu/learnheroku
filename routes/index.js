@@ -333,6 +333,31 @@ router.get('/api/get', function(req, res){
 
 })
 
+
+
+router.get('/api/getImage', function(req,res){
+
+  Person.find(function(err,data){
+
+      if(err){
+        var error = {
+          status: "ERROR",
+          message: err
+        }
+        return res.json(err)
+      }
+
+      var jsonData = {
+        status: "OK",
+        people: data
+      }
+
+      return res.json(jsonData);
+
+  })
+
+})
+
 // /**
 //  * POST '/api/update/:id'
 //  * Receives a POST request with data of the animal to update, updates db, responds back
